@@ -12,7 +12,7 @@ namespace ProductApi.Infrastructure.DependencyInjection
     {
         public static IServiceCollection AddInfrastructureServices(this IServiceCollection services, IConfiguration config)
         {
-             ShareServiceContainer.AddShareService<ProductDbContext>(services, config, config["MySerilog:FirstName"]!);
+             ShareServiceContainer.AddShareService<ProductDbContext>(services, config, config["AppSerilog:FileName"]!);
 
             services.AddScoped<IProduct, ProductRepository>();
 
