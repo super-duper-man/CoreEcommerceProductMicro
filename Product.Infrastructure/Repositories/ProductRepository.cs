@@ -88,7 +88,7 @@ namespace ProductApi.Infrastructure.Repositories
 
         }
 
-        public async Task<IEnumerable<Product>> GetAllAsync(Product entity)
+        public async Task<IEnumerable<Product>> GetAllAsync()
         {
             try
             {
