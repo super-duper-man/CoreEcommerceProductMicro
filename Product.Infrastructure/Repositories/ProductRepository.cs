@@ -5,7 +5,6 @@ using ProductApi.Domain.Entities;
 using ProductApi.Infrastructure.Data;
 using Resource.Share.Lib.Logs;
 using Resource.Share.Lib.Responses;
-using System;
 using System.Linq.Expressions;
 
 namespace ProductApi.Infrastructure.Repositories
@@ -38,7 +37,7 @@ namespace ProductApi.Infrastructure.Repositories
             }
             catch(Exception ex)
             {
-                LogException.LogExeption(ex);
+                LogException.LogExceptions(ex);
 
                 return new Response(false, "Error occurred adding new product");
             }
@@ -62,7 +61,7 @@ namespace ProductApi.Infrastructure.Repositories
             }
             catch (Exception ex)
             {
-                LogException.LogExeption(ex);
+                LogException.LogExceptions(ex);
                 return new Response(false, "Error occurred deleting product");
             }
         }
@@ -82,7 +81,7 @@ namespace ProductApi.Infrastructure.Repositories
             }
             catch (Exception ex)
             {
-                LogException.LogExeption(ex);
+                LogException.LogExceptions(ex);
                 throw new Exception("Error occurred finding product by Id");
             }
 
@@ -97,7 +96,7 @@ namespace ProductApi.Infrastructure.Repositories
             }
             catch (Exception ex)
             {
-                LogException.LogExeption(ex);
+                LogException.LogExceptions(ex);
                 return null!;
             }
                
@@ -117,7 +116,7 @@ namespace ProductApi.Infrastructure.Repositories
             }
             catch (Exception ex)
             {
-                LogException.LogExeption(ex);
+                LogException.LogExceptions(ex);
                 throw new InvalidOperationException("Error occurred getting product");
             }
 
@@ -142,7 +141,7 @@ namespace ProductApi.Infrastructure.Repositories
             }
             catch (Exception ex)
             {
-                LogException.LogExeption(ex);
+                LogException.LogExceptions(ex);
                 return new Response(false, "Error occurred updating product");
             }
         }
