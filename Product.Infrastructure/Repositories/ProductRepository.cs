@@ -17,7 +17,7 @@ namespace ProductApi.Infrastructure.Repositories
             {
                 var productExists = await GetAsync(p => p.Name!.Equals(entity.Name));
 
-                if (productExists is null)
+                if (productExists is not null)
                 {
                     return new Response(false, $"{entity.Name} already exists");
                 }

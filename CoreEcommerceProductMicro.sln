@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductApi.Infrastructure",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductApi.Presentation", "Product.Presentation\ProductApi.Presentation.csproj", "{11CD3B45-FCA8-4EF3-9B32-D6E3D48594BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resource.Share.Lib", "..\CoreEccomerceMicroService\Resource.Share.Lib\Resource.Share.Lib.csproj", "{A43FD4C2-DF60-E63C-B370-064638E6F581}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resource.Share.Lib", "..\SharedResourceSolution\Resource.Share.Lib\Resource.Share.Lib.csproj", "{F1C918E6-5CC5-D6E0-86F4-C57FB9480F76}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,10 @@ Global
 		{11CD3B45-FCA8-4EF3-9B32-D6E3D48594BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{11CD3B45-FCA8-4EF3-9B32-D6E3D48594BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{11CD3B45-FCA8-4EF3-9B32-D6E3D48594BC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A43FD4C2-DF60-E63C-B370-064638E6F581}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A43FD4C2-DF60-E63C-B370-064638E6F581}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A43FD4C2-DF60-E63C-B370-064638E6F581}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A43FD4C2-DF60-E63C-B370-064638E6F581}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1C918E6-5CC5-D6E0-86F4-C57FB9480F76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1C918E6-5CC5-D6E0-86F4-C57FB9480F76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1C918E6-5CC5-D6E0-86F4-C57FB9480F76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1C918E6-5CC5-D6E0-86F4-C57FB9480F76}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
