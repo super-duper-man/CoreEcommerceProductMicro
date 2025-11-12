@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using ProductApi.Application.Dtos;
 using ProductApi.Application.Dtos.Conversions;
 using ProductApi.Application.Interfaces;
@@ -8,6 +9,7 @@ namespace ProductApi.Presentation.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [AllowAnonymous]
     public class ProductController(IProduct productInterface) : ControllerBase
     {
         [HttpGet]
@@ -41,6 +43,7 @@ namespace ProductApi.Presentation.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles ="Admin")]
         public async Task<ActionResult<Response>> CreateProduct([FromBody] ProductDto product)
         {
             if (!ModelState.IsValid)
@@ -55,6 +58,7 @@ namespace ProductApi.Presentation.Controllers
         }
 
         [HttpPut]
+        [Authorize(Roles = "Admin")]
         public async Task<ActionResult<Response>> UpdateProduct([FromBody] ProductDto product)
         {
             if (!ModelState.IsValid)
@@ -69,6 +73,7 @@ namespace ProductApi.Presentation.Controllers
         }
 
         [HttpDelete]
+        [Authorize(Roles = "Admin")]
         public async Task<ActionResult<Response>> DeleteProduct([FromBody] ProductDto product)
         {
             if (!ModelState.IsValid)
