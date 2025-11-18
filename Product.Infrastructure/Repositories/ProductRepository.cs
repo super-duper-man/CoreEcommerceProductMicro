@@ -91,13 +91,12 @@ namespace ProductApi.Infrastructure.Repositories
         {
             try
             {
-                var products = await context.Products.AsNoTracking().ToListAsync();
-                return products is not null ? products : null!;
+                return await context.Products.AsNoTracking().ToListAsync();
             }
-            catch (Exception ex)
+            catch (Exception ex)    
             {
                 LogException.LogExceptions(ex);
-                return null!;
+                return Enumerable.Empty<Product>();
             }
                
         }
