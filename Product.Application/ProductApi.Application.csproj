@@ -7,7 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\SharedResourceSolution\Resource.Share.Lib\Resource.Share.Lib.csproj" />
+    <PackageReference Include="MassTransit" Version="8.5.6" />
+    <PackageReference Include="MassTransit.RabbitMQ" Version="8.5.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\CoreEccomerceMicroService\Resource.Share.Lib\Resource.Share.Lib.csproj" />
     <ProjectReference Include="..\Product.Domain\ProductApi.Domain.csproj" />
   </ItemGroup>
 
