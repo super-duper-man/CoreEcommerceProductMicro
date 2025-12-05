@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using OneOf;
 using ProductApi.Application.Dtos;
 using ProductApi.Application.Dtos.Conversions;
 using ProductApi.Application.Interfaces;
@@ -44,7 +45,7 @@ namespace ProductApi.Presentation.Controllers
 
         [HttpPost]
         [Authorize(Roles ="Admin")]
-        public async Task<ActionResult<Response>> CreateProduct([FromBody] ProductDto product)
+        public async Task<ActionResult<OneOf<ProductDto, Response>>> CreateProduct([FromBody] ProductDto product)
         {
             if (!ModelState.IsValid)
             {
@@ -52,9 +53,19 @@ namespace ProductApi.Presentation.Controllers
             }
 
             var productEntity = ProductConversion.ToEntity(product);
-            var response = await productInterface.CreateAsync(productEntity);
+            var result = await productInterface.CreateAsync(productEntity);
 
-            return response.Flag is true ? Ok(response) : BadRequest(response);
+            if (result.IsT0)
+            {
+                var createdProduct = result.AsT0;
+                var dto = ProductConversion.FromEntity(createdProduct, null);
+
+                return Ok(dto);
+            }
+
+
+            var error = result.AsT1;
+            return BadRequest(error);
         }
 
         [HttpPut]

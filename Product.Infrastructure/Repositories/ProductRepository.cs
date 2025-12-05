@@ -1,5 +1,6 @@
 ﻿
 using Microsoft.EntityFrameworkCore;
+using OneOf;
 using ProductApi.Application.Interfaces;
 using ProductApi.Domain.Entities;
 using ProductApi.Infrastructure.Data;
@@ -11,7 +12,7 @@ namespace ProductApi.Infrastructure.Repositories
 {
     public class ProductRepository(ProductDbContext context) : IProduct
     {
-        public async Task<Response> CreateAsync(Product entity)
+        public async Task<OneOf<Product, Response>> CreateAsync(Product entity)
         {
             try
             {
